@@ -12,6 +12,10 @@ Minimal runbook for Cloud agents to get productive quickly in this repo.
 ### Baseline setup
 Run these from repo root:
 - `go version` (CI currently runs on Go `1.25.x` and `1.26.x`).
+- If your environment is older than Go 1.25, bootstrap quickly:
+  - `GOTOOLCHAIN=local go install golang.org/dl/go1.25.4@latest`
+  - `"$HOME/go/bin/go1.25.4" download`
+  - Use `"$HOME/go/bin/go1.25.4"` for all commands in this skill.
 - `go env GOMOD` (sanity-check that you are in the module).
 - `go test -v ./integrationtests/tools/...` (quick dependency + toolchain smoke test).
 
